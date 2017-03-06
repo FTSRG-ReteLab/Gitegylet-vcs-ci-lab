@@ -25,7 +25,7 @@ public class TrainSystemTest {
 		controller = system.getController();
 		sensor = system.getSensor();
 		user = system.getUser();
-
+		taco = system.getTaco();
 		sensor.overrideSpeedLimit(50);
 	}
 	
@@ -64,7 +64,6 @@ public class TrainSystemTest {
 	
 	@Test
 	public void test4() {
-		taco = new TrainTachograph();
 		user.overrideJoystickPosition(3);
 		controller.followSpeed();
 		taco.recordValues(new Date(), user.getJoystickPosition(), controller.getReferenceSpeed());
