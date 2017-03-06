@@ -17,7 +17,7 @@ public class TrainSystemTest {
 	TrainController controller;
 	TrainSensor sensor;
 	TrainUser user;
-	TrainTachograph taco = new TrainTachograph();
+	TrainTachograph taco;
 	
 	@Before
 	public void before() {
@@ -64,6 +64,7 @@ public class TrainSystemTest {
 	
 	@Test
 	public void test4() {
+		taco = new TrainTachograph();
 		user.overrideJoystickPosition(3);
 		controller.followSpeed();
 		taco.recordValues(new Date(), user.getJoystickPosition(), controller.getReferenceSpeed());
